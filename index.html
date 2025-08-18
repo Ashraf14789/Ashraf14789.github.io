@@ -1,1 +1,311 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashraf Ahmed Salah's Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Deep Blue and Cyan -->
+    <!-- Application Structure Plan: This version uses a modern, high-contrast aesthetic with a grid-based layout. The hero section provides a striking introduction. Skills are presented as distinct lists for technical and soft skills. Projects are in a card format with a clean, expandable design. The timeline offers a clear, polished view of experience. This structure is designed to be visually appealing and highly readable, prioritizing a premium, professional feel. -->
+    <!-- Visualization & Content Choices: 1. Skills -> Goal: Inform/List -> Viz: Simple lists with styled items -> Interaction: None -> Justification: Provides a clean, professional representation of skills without a complex chart, differentiating between technical and soft skills. -> Library/Method: HTML/CSS/Tailwind. 2. Projects -> Goal: Organize/Inform -> Viz: Grid of Cards -> Interaction: Click to toggle visibility of details -> Justification: Maintains a clean aesthetic, revealing details only when needed, while visually showcasing the project. -> Library/Method: HTML/CSS/JS. 3. Education/Experience -> Goal: Show Change -> Viz: Vertical Timeline -> Interaction: None, purely visual -> Justification: Provides a classic, elegant narrative flow for professional history. -> Library/Method: HTML/CSS/Tailwind. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .project-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-200">
+
+    <!-- Header & Navigation -->
+    <header class="bg-slate-800 text-white shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center space-x-4 mb-4 md:mb-0">
+                <div class="text-center md:text-left">
+                    <h1 class="text-3xl font-bold text-cyan-400">Ashraf Ahmed Salah</h1>
+                    <p class="text-sm text-slate-400">Mechatronics and Machine learning Engineer</p>
+                </div>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#about" class="hover:text-cyan-400 transition duration-300 nav-link">About</a>
+                <a href="#skills" class="hover:text-cyan-400 transition duration-300 nav-link">Skills</a>
+                <a href="#projects" class="hover:text-cyan-400 transition duration-300 nav-link">Projects</a>
+                <a href="#experience" class="hover:text-cyan-400 transition duration-300 nav-link">Experience & Education</a>
+                <a href="#contact" class="hover:text-cyan-400 transition duration-300 nav-link">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none absolute top-4 left-6">
+                <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-800">
+            <a href="#about" class="block py-2 px-4 text-sm hover:bg-slate-700 nav-link">About</a>
+            <a href="#skills" class="block py-2 px-4 text-sm hover:bg-slate-700 nav-link">Skills</a>
+            <a href="#projects" class="block py-2 px-4 text-sm hover:bg-slate-700 nav-link">Projects</a>
+            <a href="#experience" class="block py-2 px-4 text-sm hover:bg-slate-700 nav-link">Experience & Education</a>
+            <a href="#contact" class="block py-2 px-4 text-sm hover:bg-slate-700 nav-link">Contact</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+
+        <!-- About Me Section -->
+        <section id="about" class="text-center mt-8 mb-16 bg-slate-800 p-8 rounded-lg shadow-xl">
+            <h2 class="text-4xl font-bold mb-4 text-cyan-400">About</h2>
+            <p class="max-w-3xl mx-auto text-lg text-slate-400">
+                An ambitious student with a passion for problem-solving through data. Seeking an opportunity to develop practical experience with machine learning algorithms and tools such as Python, Scikit-learn, and TensorFlow. Aiming to leverage my academic background to build and deploy effective models.
+            </p>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="mb-16 bg-slate-800 p-8 rounded-lg shadow-xl">
+            <h2 class="text-3xl font-bold text-center mb-8 text-cyan-400">Skills</h2>
+            <p class="text-center text-slate-400 mb-8">
+                This section lists my key technical and soft skills.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Technical Skills</h3>
+                    <ul class="list-none space-y-4">
+                        <li class="bg-slate-700 p-4 rounded-lg shadow">
+                            <h4 class="text-lg font-semibold text-cyan-400">Machine Learning</h4>
+                            <p class="text-sm text-slate-400 mt-1">Modeling, feature engineering</p>
+                        </li>
+                        <li class="bg-slate-700 p-4 rounded-lg shadow">
+                            <h4 class="text-lg font-semibold text-cyan-400">Deep Learning</h4>
+                            <p class="text-sm text-slate-400 mt-1">PyTorch, TensorFlow</p>
+                        </li>
+                        <li class="bg-slate-700 p-4 rounded-lg shadow">
+                            <h4 class="text-lg font-semibold text-cyan-400">Data Analysis</h4>
+                            <p class="text-sm text-slate-400 mt-1">pandas, NumPy, Seaborn</p>
+                        </li>
+                        <li class="bg-slate-700 p-4 rounded-lg shadow">
+                            <h4 class="text-lg font-semibold text-cyan-400">NLP</h4>
+                            <p class="text-sm text-slate-400 mt-1">Transformers, pipelines</p>
+                        </li>
+                        <li class="bg-slate-700 p-4 rounded-lg shadow">
+                            <h4 class="text-lg font-semibold text-cyan-400">Computer Vision</h4>
+                            <p class="text-sm text-slate-400 mt-1">Detection, augmentation</p>
+                        </li>
+                        <li class="bg-slate-700 p-4 rounded-lg shadow">
+                            <h4 class="text-lg font-semibold text-cyan-400">Other Skills</h4>
+                            <p class="text-sm text-slate-400 mt-1">C and Python, MATLAB Simulink, PLC Control, SolidWorks & Fusion 360</p>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Soft Skills</h3>
+                    <ul class="list-none space-y-4">
+                        <li class="bg-slate-700 p-4 rounded-lg shadow">
+                            <h4 class="text-lg font-semibold text-cyan-400">Investigative</h4>
+                        </li>
+                        <li class="bg-slate-700 p-4 rounded-lg shadow">
+                            <h4 class="text-lg font-semibold text-cyan-400">Fast learner</h4>
+                        </li>
+                        <li class="bg-slate-700 p-4 rounded-lg shadow">
+                            <h4 class="text-lg font-semibold text-cyan-400">Realistic</h4>
+                        </li>
+                        <li class="bg-slate-700 p-4 rounded-lg shadow">
+                            <h4 class="text-lg font-semibold text-cyan-400">Enterprising</h4>
+                        </li>
+                        <li class="bg-slate-700 p-4 rounded-lg shadow">
+                            <h4 class="text-lg font-semibold text-cyan-400">Managed multiple project tasks simultaneously</h4>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8 text-cyan-400">Projects</h2>
+             <p class="text-center text-slate-400 mb-8">
+                Here I showcase a selection of projects I have worked on, which reflect my ability to apply theoretical concepts to practical solutions. Click on a project to view more details.
+            </p>
+            <div class="space-y-8">
+                <!-- Project Card 1 -->
+                <div class="bg-slate-800 p-6 rounded-lg shadow-xl cursor-pointer project-card hover:bg-slate-700 transition duration-300">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-2xl font-bold text-cyan-400">Mechanical & CAD Design</h3>
+                        <span class="text-slate-400 transform transition-transform duration-300">▼</span>
+                    </div>
+                    <div class="project-details mt-4 text-slate-400">
+                        <p class="font-semibold">Tools Used:</p>
+                        <p>SolidWorks, Fusion 360, MATLAB</p>
+                        <p class="font-semibold mt-2">Project Description:</p>
+                        <ul class="list-disc list-inside space-y-1 mt-1">
+                            <li>Designed hydraulic cylinder with stress and fatigue analysis.</li>
+                            <li>Modeled a roots blower and performed simulation in SolidWorks.</li>
+                            <li>Created Islamic geometric shapes for laser cutting using Fusion 360.</li>
+                            <li><a href="https://drive.google.com/drive/folders/19-Qgj8XJFnhy26sQwqUJoLqrLrSXjq4I?usp=drive_link" class="text-cyan-400 hover:underline" target="_blank">View on Google Drive</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Project Card 2 -->
+                <div class="bg-slate-800 p-6 rounded-lg shadow-xl cursor-pointer project-card hover:bg-slate-700 transition duration-300">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-2xl font-bold text-cyan-400">Movable Robot Arm</h3>
+                        <span class="text-slate-400 transform transition-transform duration-300">▼</span>
+                    </div>
+                    <div class="project-details mt-4 text-slate-400">
+                        <p class="font-semibold">Tools Used:</p>
+                        <p>SolidWorks, Fusion 360, MATLAB</p>
+                        <p class="font-semibold mt-2">Project Description:</p>
+                        <ul class="list-disc list-inside space-y-1 mt-1">
+                            <li>Designed and built an automated robot arm capable of moving to specific points, performing a specific task, and returning to its initial position. MATLAB was used for simulation and control, and Arduino Uno served as the microcontroller.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience & Education Timeline -->
+        <section id="experience" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-12 text-cyan-400">Experience & Education</h2>
+            <div class="relative max-w-2xl mx-auto">
+                <div class="absolute left-1/2 h-full border-l-2 border-slate-600"></div>
+                <!-- Timeline Item 1 -->
+                <div class="mb-8 flex justify-between flex-row-reverse items-center w-full">
+                    <div class="order-1 w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-cyan-400 shadow-xl w-8 h-8 rounded-full">
+                        <h1 class="mx-auto font-semibold text-lg text-slate-900">1</h1>
+                    </div>
+                    <div class="order-1 bg-slate-800 rounded-lg shadow-xl w-5/12 px-6 py-4">
+                        <h3 class="font-bold text-white text-xl">Faculty of Engineering, Zagazig University</h3>
+                        <p class="text-sm text-slate-400">Mechatronics Engineering Student</p>
+                    </div>
+                </div>
+                <!-- Timeline Item 2 -->
+                <div class="mb-8 flex justify-between items-center w-full">
+                    <div class="order-1 w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-cyan-400 shadow-xl w-8 h-8 rounded-full">
+                        <h1 class="mx-auto text-slate-900 font-semibold text-lg">2</h1>
+                    </div>
+                    <div class="order-1 bg-slate-800 rounded-lg shadow-xl w-5/12 px-6 py-4">
+                        <h3 class="font-bold text-white text-xl">Training at AL_ARABYA Factory</h3>
+                        <p class="text-sm text-slate-400">Practical training illustrating various manufacturing methods for car battery production and packaging lines.</p>
+                    </div>
+                </div>
+                <!-- Timeline Item 3 -->
+                <div class="mb-8 flex justify-between flex-row-reverse items-center w-full">
+                    <div class="order-1 w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-cyan-400 shadow-xl w-8 h-8 rounded-full">
+                        <h1 class="mx-auto font-semibold text-lg text-slate-900">3</h1>
+                    </div>
+                    <div class="order-1 bg-slate-800 rounded-lg shadow-xl w-5/12 px-6 py-4">
+                        <h3 class="font-bold text-white text-xl">Innovation Program (45 hours)</h3>
+                        <p class="text-sm text-slate-400">Training program on innovation and entrepreneurship with ITIDA.</p>
+                    </div>
+                </div>
+                <!-- Timeline Item 4 -->
+                <div class="mb-8 flex justify-between items-center w-full">
+                    <div class="order-1 w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-cyan-400 shadow-xl w-8 h-8 rounded-full">
+                        <h1 class="mx-auto text-slate-900 font-semibold text-lg">4</h1>
+                    </div>
+                    <div class="order-1 bg-slate-800 rounded-lg shadow-xl w-5/12 px-6 py-4">
+                        <h3 class="font-bold text-white text-xl">HA Consulting Group</h3>
+                        <p class="text-sm text-slate-400">Study Classic Control ,PLC control and Motor drive.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="text-center bg-slate-800 p-8 rounded-lg shadow-xl">
+            <h2 class="text-3xl font-bold mb-4 text-cyan-400">Contact Me</h2>
+            <p class="mb-6 text-slate-400">Feel free to get in touch. You can reach me via the following methods:</p>
+            <div class="flex justify-center space-x-6 text-lg">
+                <a href="mailto:ashraf78909@gmail.com" class="text-cyan-400 hover:underline">Email</a>
+                <span>|</span>
+                <a href="tel:+201030135930" class="text-cyan-400 hover:underline">Phone</a>
+                <span>|</span>
+                <a href="https://www.linkedin.com/in/ashraf-ahmed-aas" class="text-cyan-400 hover:underline">My LinkedIn Profile</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-800 text-slate-400 text-center py-4 mt-8">
+        <p>&copy; <span id="current-year"></span> Ashraf Ahmed Salah. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Update current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // Project Card Accordion
+            const projectCards = document.querySelectorAll('.project-card');
+            projectCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const details = card.querySelector('.project-details');
+                    const arrow = card.querySelector('span');
+
+                    if (details.style.maxHeight) {
+                        details.style.maxHeight = null;
+                        arrow.style.transform = 'rotate(0deg)';
+                    } else {
+                        details.style.maxHeight = details.scrollHeight + "px";
+                        arrow.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+
+            // Custom smooth scroll function
+            function smoothScroll(target, duration) {
+                const headerHeight = document.querySelector('header').offsetHeight;
+                const targetElement = document.querySelector(target);
+                if (!targetElement) return;
+
+                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                const startPosition = window.pageYOffset;
+                const distance = targetPosition - startPosition;
+                let startTime = null;
+
+                function animation(currentTime) {
+                    if (startTime === null) startTime = currentTime;
+                    const timeElapsed = currentTime - startTime;
+                    const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
+                    window.scrollTo(0, run);
+                    if (timeElapsed < duration) requestAnimationFrame(animation);
+                }
+
+                function easeInOutQuad(t, b, c, d) {
+                    t /= d / 2;
+                    if (t < 1) return c / 2 * t * t + b;
+                    t--;
+                    return -c / 2 * (t * (t - 2) - 1) + b;
+                }
+
+                requestAnimationFrame(animation);
+            }
+
+            // Navigation links click listener
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const href = this.getAttribute('href');
+                    if (href !== '#') {
+                        smoothScroll(href, 1500);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
 
