@@ -1,5 +1,4 @@
 /* --- GLOBAL STYLES & VARIABLES --- */
-/* --- GLOBAL STYLES & VARIABLES --- */
 :root {
     --bg-color: #0F172A;
     --card-bg-color: rgba(30, 41, 59, 0.7);
@@ -187,6 +186,36 @@ section {
     font-size: 1.5rem;
 }
 
+.skills-icons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 1.5rem;
+    text-align: center;
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.skill-item svg {
+    width: 2.5rem;
+    height: 2.5rem;
+    color: var(--cyan-light);
+    transition: transform 0.3s ease;
+}
+
+.skill-item:hover svg {
+    transform: scale(1.1);
+}
+
+.skill-item span {
+    font-size: 0.875rem;
+    color: var(--text-color);
+}
+
 .skills-tags {
     display: flex;
     flex-wrap: wrap;
@@ -194,19 +223,15 @@ section {
     gap: 0.75rem;
 }
 
-.skills-tags span {
+.skills-tags.soft-skills span {
     font-size: 0.875rem;
     font-weight: 500;
     padding: 0.5rem 1rem;
     border-radius: 9999px;
-    background-color: rgba(14, 116, 144, 0.5); /* cyan-900/50 */
-    color: #67e8f9; /* cyan-300 */
-}
-
-.skills-tags.soft-skills span {
     background-color: rgba(51, 65, 85, 0.8); /* slate-700/80 */
     color: var(--text-color);
 }
+
 
 /* --- PROJECTS SECTION --- */
 .projects-container {
@@ -335,25 +360,6 @@ section {
     color: var(--text-color-light);
 }
 
-/* --- TESTIMONIALS SECTION --- */
-.testimonial-grid {
-    display: grid;
-    gap: 2rem;
-    grid-template-columns: 1fr;
-}
-.testimonial-card {
-    border-left: 4px solid var(--cyan-dark);
-}
-.testimonial-text {
-    font-style: italic;
-    color: var(--text-color);
-    margin-bottom: 1rem;
-}
-.testimonial-author {
-    font-weight: 700;
-    color: var(--text-color-light);
-    text-align: right;
-}
 
 /* --- CONTACT & FOOTER --- */
 .contact-links {
@@ -396,9 +402,6 @@ section {
         grid-template-columns: repeat(3, 1fr);
     }
     .skills-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-    .testimonial-grid {
         grid-template-columns: 1fr 1fr;
     }
 }
