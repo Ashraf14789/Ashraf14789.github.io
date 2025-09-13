@@ -10,7 +10,6 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            /* Added a subtle gradient background */
             background-color: #0F172A; /* bg-slate-900 */
             background-image: radial-gradient(circle at 1px 1px, rgba(0, 183, 255, 0.15) 1px, transparent 0);
             background-size: 20px 20px;
@@ -20,14 +19,12 @@
             overflow: hidden;
             transition: max-height 0.7s ease-in-out;
         }
-        /* Class for the frosted glass effect */
         .glass-effect {
             background: rgba(30, 41, 59, 0.7); /* bg-slate-800 with transparency */
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        /* Gradient text utility */
         .gradient-text {
             background-image: linear-gradient(to right, #22d3ee, #67e8f9); /* cyan-400 to cyan-200 */
             -webkit-background-clip: text;
@@ -49,9 +46,8 @@
         <nav class="container mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center">
             <div class="flex items-center space-x-4 mb-4 md:mb-0">
                 <div class="text-center md:text-left">
-                    <h1 class="text-3xl font-bold gradient-text">Ashraf Ahmed Salah</h1>
-                    <p class="text-sm text-slate-400"><span id="typed-subtitle"></span></p>
-                </div>
+                    <img src="logo.png" alt="Ashraf Ahmed Salah Logo" class="h-16 md:h-16 w-auto">
+                    </div>
             </div>
             <div class="hidden md:flex space-x-6">
                 <a href="#about" class="hover:text-cyan-400 transition duration-300 nav-link">About</a>
@@ -235,7 +231,7 @@
                 offset: 50, // offset (in px) from the original trigger point
             });
             
-            // Initialize Typed.js
+            // Initialize Typed.js (Note: This is still present but its output might be hidden by the logo)
             new Typed('#typed-subtitle', {
                 strings: ['Mechatronics Engineer', 'Machine Learning Engineer', 'Problem Solver'],
                 typeSpeed: 50,
