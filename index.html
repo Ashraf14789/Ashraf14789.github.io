@@ -1,185 +1,324 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ashraf Ahmed Salah - Portfolio</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="Gemini_Generated_Image_jp0mgcjp0mgcjp0m.png">
-
-  <style>
-    /* Smooth accordion animation */
-    .accordion-content {
-      transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
-      overflow: hidden;
-      max-height: 0;
-      opacity: 0;
-      padding: 0 1rem;
-    }
-    .accordion-content.open {
-      opacity: 1;
-      padding: 1rem;
-    }
-  </style>
-</head>
-<body class="bg-gray-900 text-gray-200 font-sans">
-
-  <!-- Navbar -->
-  <header class="bg-gray-900 text-white shadow-md fixed top-0 left-0 w-full z-50">
-    <div class="container mx-auto flex justify-between items-center py-4 px-6">
-      
-      <!-- Logo + Name -->
-      <div class="flex items-center space-x-2">
-        <img src="Gemini_Generated_Image_jp0mgcjp0mgcjp0m.png" alt="Logo" class="h-10 w-10 rounded">
-        <span class="text-xl font-bold">Ashraf</span>
-      </div>
-
-      <!-- Desktop Nav -->
-      <nav class="hidden md:flex space-x-6">
-        <a href="#home" class="hover:text-blue-400">Home</a>
-        <a href="#about" class="hover:text-blue-400">About</a>
-        <a href="#projects" class="hover:text-blue-400">Projects</a>
-        <a href="#skills" class="hover:text-blue-400">Skills</a>
-        <a href="#timeline" class="hover:text-blue-400">Timeline</a>
-        <a href="#contact" class="hover:text-blue-400">Contact</a>
-      </nav>
-
-      <!-- Mobile Nav Button -->
-      <button id="menu-btn" class="md:hidden text-gray-200 focus:outline-none">☰</button>
-    </div>
-
-    <!-- Mobile Menu -->
-    <nav id="menu" class="hidden bg-gray-800 md:hidden flex-col space-y-4 px-6 py-4">
-      <a href="#home" class="hover:text-blue-400">Home</a>
-      <a href="#about" class="hover:text-blue-400">About</a>
-      <a href="#projects" class="hover:text-blue-400">Projects</a>
-      <a href="#skills" class="hover:text-blue-400">Skills</a>
-      <a href="#timeline" class="hover:text-blue-400">Timeline</a>
-      <a href="#contact" class="hover:text-blue-400">Contact</a>
-    </nav>
-  </header>
-
-  <!-- Hero Section -->
-  <section id="home" class="h-screen flex flex-col justify-center items-center bg-gray-900 text-white text-center px-4">
-    <img src="Gemini_Generated_Image_jp0mgcjp0mgcjp0m.png" alt="Logo" class="w-32 h-32 mb-6 drop-shadow-lg">
-    <h1 class="text-5xl font-bold mb-4">Ashraf Ahmed Salah</h1>
-    <p class="text-lg text-gray-400 mb-6">Mechatronics & Machine Learning Engineer</p>
-    <a href="#contact" class="bg-blue-500 px-6 py-3 rounded-lg text-white hover:bg-blue-600 transition">Contact Me</a>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="py-20 px-6 container mx-auto">
-    <h2 class="text-4xl font-bold text-center mb-8 text-blue-400">About Me</h2>
-    <p class="text-lg text-gray-400 leading-relaxed text-center max-w-3xl mx-auto">
-      I am a Mechatronics Engineer passionate about Machine Learning and Robotics. 
-      Skilled in programming, simulation, and designing automated systems, I strive to solve real-world problems using innovative technology.
-    </p>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects" class="py-20 px-6 bg-gray-800">
-    <h2 class="text-4xl font-bold text-center mb-8 text-blue-400">Projects</h2>
-    <div class="max-w-3xl mx-auto space-y-4">
-      <div class="accordion">
-        <button class="w-full text-left bg-gray-700 p-4 rounded-md hover:bg-gray-600 transition flex justify-between items-center">
-          <span>Project 1: Smart Irrigation System</span>
-          <span>+</span>
-        </button>
-        <div class="accordion-content bg-gray-600 rounded-b-md">
-          <p>Automated irrigation system using sensors and microcontrollers for efficient water usage in agriculture.</p>
-        </div>
-      </div>
-      <div class="accordion">
-        <button class="w-full text-left bg-gray-700 p-4 rounded-md hover:bg-gray-600 transition flex justify-between items-center">
-          <span>Project 2: Object Detection Robot</span>
-          <span>+</span>
-        </button>
-        <div class="accordion-content bg-gray-600 rounded-b-md">
-          <p>A robot equipped with a camera and AI to detect and avoid obstacles autonomously.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Skills Section -->
-  <section id="skills" class="py-20 px-6 container mx-auto">
-    <h2 class="text-4xl font-bold text-center mb-8 text-blue-400">Skills</h2>
-    <ul class="grid grid-cols-2 md:grid-cols-3 gap-6 text-center text-lg">
-      <li class="bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition">Python</li>
-      <li class="bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition">MATLAB</li>
-      <li class="bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition">SolidWorks</li>
-      <li class="bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition">Arduino</li>
-      <li class="bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition">Machine Learning</li>
-      <li class="bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition">Control Systems</li>
-    </ul>
-  </section>
-
-  <!-- Timeline Section -->
-  <section id="timeline" class="py-20 px-6 bg-gray-800">
-    <h2 class="text-4xl font-bold text-center mb-8 text-blue-400">Timeline</h2>
-    <div class="max-w-3xl mx-auto relative border-l border-gray-600">
-      <div class="mb-10 ml-6">
-        <div class="absolute w-3 h-3 bg-blue-400 rounded-full -left-1.5"></div>
-        <time class="mb-1 text-sm font-normal leading-none text-gray-400">2025</time>
-        <h3 class="text-lg font-semibold text-white">Graduation</h3>
-        <p class="text-base font-normal text-gray-400">Completed BSc in Mechatronics Engineering at Zagazig University.</p>
-      </div>
-      <div class="mb-10 ml-6">
-        <div class="absolute w-3 h-3 bg-blue-400 rounded-full -left-1.5"></div>
-        <time class="mb-1 text-sm font-normal leading-none text-gray-400">2024</time>
-        <h3 class="text-lg font-semibold text-white">Internship</h3>
-        <p class="text-base font-normal text-gray-400">Worked on industrial automation and robotics projects.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="py-20 px-6 container mx-auto text-center">
-    <h2 class="text-4xl font-bold mb-8 text-blue-400">Contact Me</h2>
-    <p class="text-lg text-gray-400 mb-6">Email: <a href="mailto:ashraf@example.com" class="text-blue-400 hover:underline">ashraf@example.com</a></p>
-    <p class="text-lg text-gray-400">LinkedIn: <a href="https://linkedin.com" class="text-blue-400 hover:underline">linkedin.com/in/ashraf</a></p>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-gray-900 py-6 text-center text-gray-500 text-sm">
-    © 2025 Ashraf Ahmed Salah. All Rights Reserved.
-  </footer>
-
-  <!-- Script -->
-  <script>
-    // Mobile Menu Toggle
-    const menuBtn = document.getElementById("menu-btn");
-    const menu = document.getElementById("menu");
-    menuBtn.addEventListener("click", () => {
-      menu.classList.toggle("hidden");
-    });
-
-    // Auto-close mobile menu on link click
-    document.querySelectorAll("#menu a").forEach(link => {
-      link.addEventListener("click", () => {
-        menu.classList.add("hidden");
-      });
-    });
-
-    // Accordion functionality
-    document.querySelectorAll(".accordion button").forEach(button => {
-      button.addEventListener("click", () => {
-        const accordionContent = button.nextElementSibling;
-
-        button.querySelector("span:last-child").textContent =
-          accordionContent.classList.contains("open") ? "+" : "−";
-
-        accordionContent.classList.toggle("open");
-
-        if (accordionContent.classList.contains("open")) {
-          accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
-        } else {
-          accordionContent.style.maxHeight = "0px";
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashraf Ahmed Salah's Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            /* Added a subtle gradient background */
+            background-color: #0F172A; /* bg-slate-900 */
+            background-image: radial-gradient(circle at 1px 1px, rgba(0, 183, 255, 0.15) 1px, transparent 0);
+            background-size: 20px 20px;
         }
-      });
-    });
-  </script>
+        .project-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.7s ease-in-out;
+        }
+        /* Class for the frosted glass effect */
+        .glass-effect {
+            background: rgba(30, 41, 59, 0.7); /* bg-slate-800 with transparency */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        /* Gradient text utility */
+        .gradient-text {
+            background-image: linear-gradient(to right, #22d3ee, #67e8f9); /* cyan-400 to cyan-200 */
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .typed-cursor {
+            color: #22d3ee; /* cyan-400 */
+            animation: blink 0.7s infinite;
+        }
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-200">
+
+    <header class="glass-effect shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center space-x-4 mb-4 md:mb-0">
+                <div class="text-center md:text-left">
+                    <h1 class="text-3xl font-bold gradient-text">Ashraf Ahmed Salah</h1>
+                    <p class="text-sm text-slate-400"><span id="typed-subtitle"></span></p>
+                </div>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#about" class="hover:text-cyan-400 transition duration-300 nav-link">About</a>
+                <a href="#skills" class="hover:text-cyan-400 transition duration-300 nav-link">Skills</a>
+                <a href="#projects" class="hover:text-cyan-400 transition duration-300 nav-link">Projects</a>
+                <a href="#experience" class="hover:text-cyan-400 transition duration-300 nav-link">Experience</a>
+                <a href="#contact" class="hover:text-cyan-400 transition duration-300 nav-link">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none absolute top-4 left-6" aria-controls="mobile-menu" aria-expanded="false">
+                <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden glass-effect">
+            <a href="#about" class="block py-2 px-4 text-sm hover:bg-slate-700 nav-link">About</a>
+            <a href="#skills" class="block py-2 px-4 text-sm hover:bg-slate-700 nav-link">Skills</a>
+            <a href="#projects" class="block py-2 px-4 text-sm hover:bg-slate-700 nav-link">Projects</a>
+            <a href="#experience" class="block py-2 px-4 text-sm hover:bg-slate-700 nav-link">Experience & Education</a>
+            <a href="#contact" class="block py-2 px-4 text-sm hover:bg-slate-700 nav-link">Contact</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+
+        <section id="about" class="text-center mt-8 mb-16 glass-effect p-8 rounded-lg shadow-xl" data-aos="fade-up">
+            <h2 class="text-4xl font-bold mb-4 gradient-text">About Me</h2>
+            <p class="max-w-3xl mx-auto text-lg text-slate-300">
+                An ambitious student with a passion for problem-solving through data. Seeking an opportunity to develop practical experience with machine learning algorithms and tools such as Python, Scikit-learn, and TensorFlow. Aiming to leverage my academic background to build and deploy effective models.
+            </p>
+        </section>
+
+        <section id="skills" class="mb-16" data-aos="fade-up" data-aos-delay="100">
+             <h2 class="text-3xl font-bold text-center mb-8 gradient-text">Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="glass-effect p-8 rounded-lg shadow-xl">
+                    <h3 class="text-2xl font-bold text-white mb-6 text-center">Technical Skills</h3>
+                    <div class="flex flex-wrap justify-center gap-3 text-center">
+                        <span class="bg-cyan-900/50 text-cyan-300 text-sm font-medium px-4 py-2 rounded-full">Machine Learning</span>
+                        <span class="bg-cyan-900/50 text-cyan-300 text-sm font-medium px-4 py-2 rounded-full">Deep Learning</span>
+                        <span class="bg-cyan-900/50 text-cyan-300 text-sm font-medium px-4 py-2 rounded-full">PyTorch</span>
+                        <span class="bg-cyan-900/50 text-cyan-300 text-sm font-medium px-4 py-2 rounded-full">TensorFlow</span>
+                        <span class="bg-cyan-900/50 text-cyan-300 text-sm font-medium px-4 py-2 rounded-full">Data Analysis</span>
+                        <span class="bg-cyan-900/50 text-cyan-300 text-sm font-medium px-4 py-2 rounded-full">Pandas & NumPy</span>
+                        <span class="bg-cyan-900/50 text-cyan-300 text-sm font-medium px-4 py-2 rounded-full">NLP & Transformers</span>
+                        <span class="bg-cyan-900/50 text-cyan-300 text-sm font-medium px-4 py-2 rounded-full">Computer Vision</span>
+                        <span class="bg-cyan-900/50 text-cyan-300 text-sm font-medium px-4 py-2 rounded-full">C & Python</span>
+                        <span class="bg-cyan-900/50 text-cyan-300 text-sm font-medium px-4 py-2 rounded-full">MATLAB & Simulink</span>
+                        <span class="bg-cyan-900/50 text-cyan-300 text-sm font-medium px-4 py-2 rounded-full">PLC Control</span>
+                        <span class="bg-cyan-900/50 text-cyan-300 text-sm font-medium px-4 py-2 rounded-full">SolidWorks</span>
+                        <span class="bg-cyan-900/50 text-cyan-300 text-sm font-medium px-4 py-2 rounded-full">Fusion 360</span>
+                    </div>
+                </div>
+                <div class="glass-effect p-8 rounded-lg shadow-xl">
+                    <h3 class="text-2xl font-bold text-white mb-6 text-center">Soft Skills</h3>
+                     <div class="flex flex-wrap justify-center gap-3 text-center">
+                        <span class="bg-slate-700/80 text-slate-300 text-sm font-medium px-4 py-2 rounded-full">Investigative</span>
+                        <span class="bg-slate-700/80 text-slate-300 text-sm font-medium px-4 py-2 rounded-full">Fast Learner</span>
+                        <span class="bg-slate-700/80 text-slate-300 text-sm font-medium px-4 py-2 rounded-full">Realistic</span>
+                        <span class="bg-slate-700/80 text-slate-300 text-sm font-medium px-4 py-2 rounded-full">Enterprising</span>
+                        <span class="bg-slate-700/80 text-slate-300 text-sm font-medium px-4 py-2 rounded-full">Task Management</span>
+                        <span class="bg-slate-700/80 text-slate-300 text-sm font-medium px-4 py-2 rounded-full">Problem-Solving</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8 gradient-text" data-aos="fade-up">Projects</h2>
+            <div class="space-y-8">
+                <div class="glass-effect p-6 rounded-lg shadow-xl cursor-pointer project-card hover:border-cyan-400/50 border border-transparent transition-all duration-300" data-aos="fade-left" aria-expanded="false">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-2xl font-bold text-cyan-300">Mechanical & CAD Design</h3>
+                        <span class="text-slate-400 transform transition-transform duration-500">▼</span>
+                    </div>
+                    <div class="project-details mt-4 text-slate-400">
+                        <p class="font-semibold text-white">Tools Used:</p>
+                        <p>SolidWorks, Fusion 360, MATLAB</p>
+                        <p class="font-semibold mt-2 text-white">Project Description:</p>
+                        <ul class="list-disc list-inside space-y-1 mt-1">
+                            <li>Designed hydraulic cylinder with stress and fatigue analysis.</li>
+                            <li>Modeled a roots blower and performed simulation in SolidWorks.</li>
+                            <li>Created Islamic geometric shapes for laser cutting using Fusion 360.</li>
+                            <li><a href="https://drive.google.com/drive/folders/19-Qgj8XJFnhy26sQwqUJoLqrLrSXjq4I?usp=drive_link" class="text-cyan-400 hover:underline" target="_blank">View on Google Drive</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="glass-effect p-6 rounded-lg shadow-xl cursor-pointer project-card hover:border-cyan-400/50 border border-transparent transition-all duration-300" data-aos="fade-right" aria-expanded="false">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-2xl font-bold text-cyan-300">Movable Robot Arm</h3>
+                        <span class="text-slate-400 transform transition-transform duration-500">▼</span>
+                    </div>
+                    <div class="project-details mt-4 text-slate-400">
+                        <p class="font-semibold text-white">Tools Used:</p>
+                        <p>Arduino, SolidWorks, Fusion 360, MATLAB</p>
+                        <p class="font-semibold mt-2 text-white">Project Description:</p>
+                        <ul class="list-disc list-inside space-y-1 mt-1">
+                            <li>Designed and built an automated robot arm capable of moving to specific points, performing a specific task, and returning to its initial position. MATLAB was used for simulation and control, and Arduino Uno served as the microcontroller.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-12 gradient-text" data-aos="fade-up">Experience & Education</h2>
+            <div class="relative max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                <div class="absolute left-1/2 h-full border-l-2 border-slate-600 transform -translate-x-1/2"></div>
+                <div class="space-y-12">
+                     <div class="relative flex items-center">
+                        <div class="w-1/2 pr-8 text-right">
+                            <div class="glass-effect p-4 rounded-lg shadow-lg">
+                                <h3 class="font-bold text-white text-xl">Zagazig University</h3>
+                                <p class="text-sm text-slate-400">B.Sc. in Mechatronics Engineering</p>
+                            </div>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 z-10">
+                            <div class="bg-cyan-400 w-10 h-10 rounded-full flex items-center justify-center ring-8 ring-slate-900">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-900" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M12 14l9-5-9-5-9 5 9 5z" /><path d="M12 14l6.16-3.422A12.083 12.083 0 0112 21a12.083 12.083 0 01-6.16-10.422L12 14z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422A12.083 12.083 0 0112 21a12.083 12.083 0 01-6.16-10.422L12 14z" /></svg>
+                            </div>
+                        </div>
+                        <div class="w-1/2 pl-8"></div>
+                    </div>
+                     <div class="relative flex items-center">
+                        <div class="w-1/2 pr-8"></div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 z-10">
+                            <div class="bg-cyan-400 w-10 h-10 rounded-full flex items-center justify-center ring-8 ring-slate-900">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-900" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                            </div>
+                        </div>
+                        <div class="w-1/2 pl-8">
+                            <div class="glass-effect p-4 rounded-lg shadow-lg">
+                                <h3 class="font-bold text-white text-xl">Training at AL_ARABYA Factory</h3>
+                                <p class="text-sm text-slate-400">Observed manufacturing and packaging lines for car batteries.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative flex items-center">
+                        <div class="w-1/2 pr-8 text-right">
+                             <div class="glass-effect p-4 rounded-lg shadow-lg">
+                                <h3 class="font-bold text-white text-xl">Innovation Program (45 hours)</h3>
+                                <p class="text-sm text-slate-400">Completed training on innovation and entrepreneurship with ITIDA.</p>
+                            </div>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 z-10">
+                           <div class="bg-cyan-400 w-10 h-10 rounded-full flex items-center justify-center ring-8 ring-slate-900">
+                               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-900" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>
+                            </div>
+                        </div>
+                        <div class="w-1/2 pl-8"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="text-center glass-effect p-8 rounded-lg shadow-xl" data-aos="fade-up">
+            <h2 class="text-3xl font-bold mb-4 gradient-text">Contact Me</h2>
+            <p class="mb-6 text-slate-300">Feel free to get in touch. I'm open to new opportunities and collaborations.</p>
+            <div class="flex justify-center items-center space-x-6 text-lg">
+                <a href="mailto:ashraf78909@gmail.com" class="text-cyan-400 hover:underline">Email</a>
+                <span class="text-slate-600">|</span>
+                <a href="tel:+201030135930" class="text-cyan-400 hover:underline">Phone</a>
+                <span class="text-slate-600">|</span>
+                <a href="https://www.linkedin.com/in/ashraf-ahmed-aas" class="text-cyan-400 hover:underline">LinkedIn</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-slate-400 text-center py-6 mt-8">
+        <p>&copy; <span id="current-year"></span> Ashraf Ahmed Salah. All rights reserved.</p>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize AOS
+            AOS.init({
+                duration: 800, // animation duration in ms
+                once: true, // whether animation should happen only once
+                offset: 50, // offset (in px) from the original trigger point
+            });
+            
+            // Initialize Typed.js
+            new Typed('#typed-subtitle', {
+                strings: ['Mechatronics Engineer', 'Machine Learning Engineer', 'Problem Solver'],
+                typeSpeed: 50,
+                backSpeed: 30,
+                loop: true,
+                smartBackspace: true
+            });
+
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+                mobileMenu.classList.toggle('hidden');
+                mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+            });
+
+            // Update current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // Project Card Accordion
+            const projectCards = document.querySelectorAll('.project-card');
+            projectCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const details = card.querySelector('.project-details');
+                    const arrow = card.querySelector('span');
+                    const isExpanded = card.getAttribute('aria-expanded') === 'true';
+
+                    if (details.style.maxHeight) {
+                        details.style.maxHeight = null;
+                        arrow.style.transform = 'rotate(0deg)';
+                        card.setAttribute('aria-expanded', 'false');
+                    } else {
+                        details.style.maxHeight = details.scrollHeight + "px";
+                        arrow.style.transform = 'rotate(180deg)';
+                        card.setAttribute('aria-expanded', 'true');
+                    }
+                });
+            });
+
+            // Custom smooth scroll function
+            function smoothScroll(target, duration) {
+                const headerHeight = document.querySelector('header').offsetHeight;
+                const targetElement = document.querySelector(target);
+                if (!targetElement) return;
+
+                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                const startPosition = window.pageYOffset;
+                const distance = targetPosition - startPosition;
+                let startTime = null;
+
+                function animation(currentTime) {
+                    if (startTime === null) startTime = currentTime;
+                    const timeElapsed = currentTime - startTime;
+                    const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
+                    window.scrollTo(0, run);
+                    if (timeElapsed < duration) requestAnimationFrame(animation);
+                }
+
+                function easeInOutQuad(t, b, c, d) {
+                    t /= d / 2;
+                    if (t < 1) return c / 2 * t * t + b;
+                    t--;
+                    return -c / 2 * (t * (t - 2) - 1) + b;
+                }
+
+                requestAnimationFrame(animation);
+            }
+
+            // Navigation links click listener
+            document.querySelectorAll('a.nav-link').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const href = this.getAttribute('href');
+                    smoothScroll(href, 1000);
+                    // Hide mobile menu after click
+                    if (!mobileMenu.classList.contains('hidden')) {
+                         mobileMenu.classList.add('hidden');
+                         mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
