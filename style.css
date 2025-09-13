@@ -1,4 +1,5 @@
 /* --- GLOBAL STYLES & VARIABLES --- */
+/* --- GLOBAL STYLES & VARIABLES --- */
 :root {
     --bg-color: #0F172A;
     --card-bg-color: rgba(30, 41, 59, 0.7);
@@ -45,6 +46,10 @@ h1, h2, h3, h4 {
     line-height: 1.2;
 }
 
+.mt-4 {
+    margin-top: 1rem;
+}
+
 .container {
     max-width: 1024px;
     margin: 0 auto;
@@ -79,7 +84,7 @@ section {
 .section-title {
     text-align: center;
     font-size: 2.25rem;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
 /* --- HEADER & NAVIGATION --- */
@@ -121,7 +126,7 @@ section {
 }
 
 .nav-links {
-    display: none; /* Hidden on mobile by default */
+    display: none;
     gap: 1.5rem;
 }
 
@@ -147,6 +152,27 @@ section {
 
 .mobile-menu a {
     padding: 0.5rem 1.5rem;
+}
+
+
+/* --- SERVICES SECTION --- */
+.services-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+}
+.service-card {
+    text-align: center;
+}
+.service-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin: 0 auto 1.5rem auto;
+    color: var(--cyan-dark);
+}
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
 }
 
 /* --- SKILLS SECTION --- */
@@ -288,7 +314,6 @@ section {
     stroke: var(--bg-color);
 }
 
-
 .timeline-item.left .timeline-icon {
     right: -1.25rem;
 }
@@ -310,20 +335,47 @@ section {
     color: var(--text-color-light);
 }
 
+/* --- TESTIMONIALS SECTION --- */
+.testimonial-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+}
+.testimonial-card {
+    border-left: 4px solid var(--cyan-dark);
+}
+.testimonial-text {
+    font-style: italic;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+.testimonial-author {
+    font-weight: 700;
+    color: var(--text-color-light);
+    text-align: right;
+}
 
 /* --- CONTACT & FOOTER --- */
 .contact-links {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 1.5rem;
+    gap: 2rem;
     margin-top: 1.5rem;
-    font-size: 1.125rem;
 }
 
-.contact-links span {
-    color: #475569; /* slate-600 */
+.contact-link-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
 }
+.contact-link-item svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
 
 .main-footer {
     text-align: center;
@@ -340,7 +392,13 @@ section {
     .nav-links {
         display: flex;
     }
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
     .skills-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .testimonial-grid {
         grid-template-columns: 1fr 1fr;
     }
 }
